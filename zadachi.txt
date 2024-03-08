@@ -1,0 +1,340 @@
+№1
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите 5 чисел:");
+
+        double sum = 0;
+
+        for (int i = 0; i < 5; i++)
+        {
+            double num = Convert.ToDouble(Console.ReadLine());
+            sum += num;
+        }
+
+        double average = sum / 5;
+
+        if (average > 4)
+        {
+            Console.WriteLine("yes");
+        }
+        else
+        {
+            Console.WriteLine("no");
+        }
+    }
+}
+
+№2
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+    Console.WriteLine("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+
+    if (num % 2 == 0) 
+    {
+        Console.WriteLine("yes\n");
+    } 
+    else 
+    {
+        Console.WriteLine("no\n");
+    }
+  }
+}
+
+№4 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("1 для дюймы > см или 2 для см > дюймы:");
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Введите расстояние:");
+        double distance = Convert.ToDouble(Console.ReadLine());
+
+        if (choice == 1)
+        {
+            double dCm = distance * 2.54;
+            Console.WriteLine($"Расстояние в сантиметрах: {dCm} см");
+        }
+        else if (choice == 2)
+        {
+            double dInch = distance / 2.54;
+            Console.WriteLine($"Расстояние в дюймах: {dInch} дюймов");
+        }
+        else
+        {
+            Console.WriteLine("Некорректный выбор. Пожалуйста, введите 1 или 2.");
+        }
+    }
+}
+
+№1.1
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите номер месяца: ");
+        int monthNumber = Convert.ToInt32(Console.ReadLine());
+
+        switch (monthNumber)
+        {
+            case 1:
+            case 2:
+            case 12:
+                Console.WriteLine("Зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                Console.WriteLine("Весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                Console.WriteLine("Лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                Console.WriteLine("Осень");
+                break;
+            default:
+                Console.WriteLine("Ошибка");
+                break;
+        }
+    }
+}
+№2.2
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите день: ");
+        int monthNumber = Convert.ToInt32(Console.ReadLine());
+
+        switch (monthNumber)
+        {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                Console.WriteLine("Working Day");
+                break;
+            case 6:
+                Console.WriteLine("Saturday");
+                break;
+            case 7:
+                Console.WriteLine("Sunday");
+                break;
+            default:
+                Console.WriteLine("Error");
+                break;
+        }
+    }
+}
+
+№3.3
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первую букву названия месяца");
+        char  l = Console.ReadLine()[0];
+
+        string m;
+        switch (l)
+        {
+            case 'J':
+                m = "Январь";
+                break;
+            case 'F':
+                m = "Февраль";
+                break;
+            case 'D':
+                m = "Декабрь";
+                break;
+            case 'j':
+                m = "январь";
+                break;
+            case 'f':
+                m = "февраль";
+                break;
+            case 'd':
+                m = "декабрь";
+                break;
+            default:
+                m = "Ошибка";
+                break;
+        }
+
+        Console.WriteLine(m);
+    }
+}
+№ 5
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите знак операции (+,-,*,/):");
+        char operation = Console.ReadLine()[0];
+
+        string op;
+        switch (operation)
+        {
+            case '+':
+                op = "Сложение";
+                break;
+            case '-':
+                op = "Вычитание";
+                break;
+            case '*':
+                op = "Умножение";
+                break;
+            case '/':
+                op = "Деление";
+                break;
+            default:
+                op = "Неизвестная операция";
+                break;
+        }
+
+        Console.WriteLine(operationName);
+    }
+}
+
+№6
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите трехзначное число:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        int fn = number / 100;   // Получаем первую цифру числа
+        int sn = (number / 10) % 10; // Получаем вторую цифру числа
+        int tn = number % 10;     // Получаем третью цифру числа
+
+        if (fn == sn && fn == tn)
+        {
+            Console.WriteLine("YES");
+        }
+        else
+        {
+            Console.WriteLine("NO");
+        }
+    }
+}
+
+№7
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Выберите вариант расчета (1, 2 или 3):");
+        int v = Convert.ToInt32(Console.ReadLine());
+        int d, ks, ko;
+        int otv = 0;
+
+        if (v == 1)
+        {
+            Console.WriteLine("Введите желаемый доход:");
+            d = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество опозданий:");
+            ko = Convert.ToInt32(Console.ReadLine());
+
+            otv = (d / 50) * 100;
+            if (d % 50 != 0)
+            {
+                otv += 100;
+            }
+            if (ko % 3 == 0)
+            {
+                otv += ko / 3 * 20;
+            }
+        }
+        else if (v == 2)
+        {
+            Console.WriteLine("Введите количество строк кода:");
+            ks = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите желаемый доход:");
+            d = Convert.ToInt32(Console.ReadLine());
+
+            if (ks % 100 != 0)
+            {
+                otv = (ks / 100 + 1) * 50;
+            }
+            else
+            {
+                otv = ks / 100 * 50;
+            }
+
+            int dko = 0;
+            bool unreachable = true;
+            while (otv < d)
+            {
+                dko += 20;
+                otv += 100;
+                if (dko >= 40100)
+                {
+                    Console.WriteLine("ERROR");
+                    unreachable = false;
+                    break;
+                }
+            }
+            if (unreachable)
+            {
+                otv = dko / 20;
+            }
+        }
+        else if (v == 3)
+        {
+            Console.WriteLine("Введите количество строк кода:");
+            ks = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество опозданий:");
+            ko = Convert.ToInt32(Console.ReadLine());
+
+            otv = (ks / 100) * 50;
+            otv -= (ko / 3) * 20;
+            otv = Math.Max(otv, 0);
+        }
+        else
+        {
+            Console.WriteLine("ERROR");
+            return;
+        }
+
+        Console.WriteLine("Результат: " + otv);
+    }
+}
+
+
